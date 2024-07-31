@@ -1,4 +1,4 @@
-def dockerImageTag = "projectkspace/kapps:${BUILD_NUMBER}"
+def dockerImageTag = "projectkspace/mydimages:new-${BUILD_NUMBER}"
 
 node ('docker-agent') {
    
@@ -12,7 +12,7 @@ node ('docker-agent') {
       
     }
     stage('Push to DockerHUB') {
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-registry') {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerHUB') {
         def dockerImage = docker.image(dockerImageTag)
         dockerImage.push()
      }
