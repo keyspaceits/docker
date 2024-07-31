@@ -1,6 +1,6 @@
 def dockerImageTag = "projectkspace/mydimages:new-${BUILD_NUMBER}"
 
-node ('docker-agent') {
+node {
    
     stage('Checkout') {
         
