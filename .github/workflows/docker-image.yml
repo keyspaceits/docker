@@ -12,8 +12,6 @@ jobs:
       with:
         distribution: 'adopt'
         java-version: '17'
-    - name: Build with Maven
-      run: mvn clean install
     - name: Login to DockerHUB
       uses: docker/login-action@v3
       with:
