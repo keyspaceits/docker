@@ -1,6 +1,6 @@
 FROM rockylinux:9
-MAINTAINER The Contos project
+LABEL maintainer="your-email@example.com"
 RUN yum -y install httpd
 COPY index.html /var/www/html
 EXPOSE 80
-CMD /usr/sbin/httpd -D FOREGROUND
+CMD ["httpd", "-D", "FOREGROUND"]
