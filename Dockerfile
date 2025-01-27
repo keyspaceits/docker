@@ -1,4 +1,4 @@
-FROM rockylinux:9
+FROM rockylinux:9.3
 RUN yum -y install httpd
 COPY index.html /var/www/html
 EXPOSE 80
