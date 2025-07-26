@@ -1,4 +1,4 @@
-def dockerImageTag = "projectkspace/mydimages:new-${BUILD_NUMBER}"
+def dockerImageTag = "itsnewsoft/mydimages:new-${BUILD_NUMBER}"
 
 node {
    
@@ -12,7 +12,7 @@ node {
       
     }
     stage('Push to DockerHUB') {
-        docker.withRegistry('https://registry.hub.docker.com', 'dockerHUB') {
+        docker.withRegistry('https://registry.hub.docker.com', 'DockerHubCred') {
         def dockerImage = docker.image(dockerImageTag)
         dockerImage.push()
      }
